@@ -45,11 +45,3 @@ O desenvolvimento ocorre em ciclos de **Neural Sync**. Cada nova funcionalidade 
 
 ### Principais Tecnologias Abordadas
 `Next.js` • `Node.js` • `Docker` • `CI/CD` • `Software Architecture` • `AI-Driven Dev`
-
----
-
-### 💡 Por que esta versão é melhor?
-1.  **Escaneabilidade:** O uso de listas e negrito permite que o leitor entenda o projeto em 5 segundos.
-2.  **Hierarquia Visual:** Linhas horizontais (`---`) separam claramente o conceito da execução.
-3.  **Call-outs:** O uso do bloco de nota (`[!NOTE]`) no final destaca a autoria sem poluir o texto principal.
-4.  **Performance de Leitura:** Frases mais curtas e diretas eliminam a "fadiga de texto" do original.
