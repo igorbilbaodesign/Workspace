@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>TaskFlow // Neural Deck</title>
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      // 1. Immediate Theme Hydration (Prevents Flashbang)
+      (function() {
+        try {
+          const localTheme = localStorage.getItem('taskflow_theme');
+          // Default to DARK mode. Only remove dark class if explicitly set to 'light'.
+          if (localTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+
+      // Global Error Handler
+      window.onerror = function(msg, url, line, col, error) {
+        console.error('Global Error:', error);
+      };
+
+      // Polyfill for process.env
+      window.process = {
+        env: {
+          API_KEY: '' 
+        }
+      };
+      
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Space Grotesk"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            colors: {
+              canvas: '#d4d4d8', // Zinc-300: Much darker gray for Light Mode background
+              cyber: {
+                dark: '#050505',
+                panel: '#0a0a0a',
+                border: '#262626',
+                primary: '#3b82f6',
+              }
+            },
+            backgroundImage: {
+              'dot-pattern': 'radial-gradient(circle, #444 1px, transparent 1px)',
+              'dot-pattern-light': 'radial-gradient(circle, #a1a1aa 1px, transparent 1px)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Set base background colors in CSS to handle painting before JS loads */
+      body {
+        background-color: #d4d4d8; /* Zinc-300 */
+        color: #09090b; /* Zinc-950 */
+        background-image: radial-gradient(#a1a1aa 1px, transparent 1px);
+        background-size: 24px 24px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      html.dark body {
+        background-color: #050505;
+        color: #eee;
+        background-image: radial-gradient(#262626 1px, transparent 1px);
+      }
+      
+      * {
+        transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+        transition-duration: 200ms;
+        transition-timing-function: ease-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1"
+  }
+}
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .catch(err => console.log('SW registration failed'));
+    });
+  }
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="antialiased overflow-hidden">
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

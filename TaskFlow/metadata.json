@@ -1,0 +1,5 @@
+{
+  "name": "TaskFlow Pro",
+  "description": "An advanced task management system featuring state persistence, history (undo/redo), analytics, and AI-powered task breakdown.",
+  "requestFramePermissions": []
+}
