@@ -38,11 +38,8 @@ Não é apenas um tutorial ou uma documentação solta. É um **currículo estru
 Este repositório não é só teoria. Cada módulo é acompanhado por **projetos reais e funcionais**:
 
 #### **Aplicações Completas Incluem:**  
-- **Sistema de Gerenciamento de Playlists Colaborativo** (Spotify-like)  
-- **Aplicativo de Tarefas em Equipe com Chat em Tempo Real** (Trello + Slack)  
-- **Dashboard SaaS com múltiplas integrações**  
-- **E-commerce completo com carrinho e checkout**  
-- **Plataforma de conteúdo com sistema de assinaturas**
+- **Sistema de Gerenciamento de tarefas** 
+- **Dashboard de criptomoedas**
 
 Cada projeto é:  
 - ✅ **100% funcional** - não é "demo" ou "toy project"  
